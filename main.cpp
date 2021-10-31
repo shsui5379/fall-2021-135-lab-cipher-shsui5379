@@ -1,9 +1,9 @@
 #include <iostream>
-
-
-#include "funcs.h"
+#include "caesar.h"
+#include "decrypt.h"
 
 int main()
 {
+
   return 0;
 }
