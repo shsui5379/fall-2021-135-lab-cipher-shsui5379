@@ -6,6 +6,7 @@
 #include "decrypt.h"
 #include "vectorutilities.h"
 #include <cmath>
+#include "solve.h"
 
 // add your tests here
 TEST_CASE("Task B: shiftChar")
@@ -69,4 +70,11 @@ TEST_CASE("vectorutilites - generateVectorFromFrequency")
    std::vector<double> vec4 = generateVectorFromFrequency(".");
 
    CHECK(vec3 == vec4);
+}
+
+TEST_CASE("solving")
+{
+   CHECK(solve("Little Red Riding Hood decided to wear orange today.") == "Little Red Riding Hood decided to wear orange today.");
+   CHECK(solve("Qnyyqj Wji Wninsl Mtti ijhniji yt bjfw twfslj ytifd.") == "Little Red Riding Hood decided to wear orange today.");
+   CHECK(solve("Wnwf lzgmyz zw lzgmyzl lzw ogjdv osk xdsl zw vavf’l kww lzw ajgfq gx osflafy lg ljsnwd sjgmfv lzw ogjdv.") == "Even though he thought the world was flat he didn’t see the irony of wanting to travel around the world.");
 }
