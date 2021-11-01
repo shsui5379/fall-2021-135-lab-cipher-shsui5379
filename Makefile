@@ -1,13 +1,13 @@
-main: main.o caesar.o decrypt.o
-	g++ -o main main.o caesar.o decrypt.o
+main: main.o caesar.o decrypt.o vectorutilities.o solve.o
+	g++ -o main main.o caesar.o decrypt.o vectorutilities.o solve.o
 
 tests: tests.o caesar.o decrypt.o vectorutilities.o solve.o
 	g++ -o tests tests.o caesar.o decrypt.o vectorutilities.o solve.o
 
 
-main.o: main.cpp caesar.h
+main.o: main.cpp solve.h
 
-tests.o: tests.cpp doctest.h caesar.h
+tests.o: tests.cpp doctest.h caesar.h decrypt.h vectorutilities.h solve.h
 
 caesar.o: caesar.cpp caesar.h
 
