@@ -58,6 +58,8 @@ std::vector<double> generateVectorFromFrequency(std::string string)
     }
 
     //proportions
+    if (numberOfCharacters == 0)
+        return frequencies;
     for (int i = 0; i < CHAR_SET_SIZE; i++)
     {
         frequencies.at(i) /= numberOfCharacters;

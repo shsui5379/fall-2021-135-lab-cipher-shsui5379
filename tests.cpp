@@ -44,11 +44,29 @@ TEST_CASE("vectorutilities - calculateDistance")
    std::vector<double> vec4 = {16, 32, 64, 128};
 
    CHECK(calculateDistance(vec3, vec4) == sqrt(19125));
+
+   std::vector<double> vec5 = {};
+   std::vector<double> vec6 = {};
+
+   CHECK(calculateDistance(vec5, vec6) == 0);
 }
 
 TEST_CASE("vectorutilites - generateVectorFromFrequency")
 {
-   std::vector<double> vec1 = {3 / 44, 0, 1 / 44, 7 / 44, 6 / 44, 0, 2 / 44, 1 / 44, 4 / 44, 0, 0, 2 / 44, 0, 2 / 44, 5 / 44, 0, 0, 4 / 44, 0, 4 / 44, 0, 0, 1 / 44, 0, 1 / 44, 0};
+   std::vector<double> vec1 = {3 / 43., 0, 1 / 43., 7 / 43., 6 / 43., 0, 2 / 43., 1 / 43., 4 / 43., 0, 0, 2 / 43., 0, 2 / 43., 5 / 43., 0, 0, 4 / 43., 0, 4 / 43., 0, 0, 1 / 43., 0, 1 / 43., 0};
 
-   CHECK(generateVectorFromFrequency("Little Red Riding Hood decided to wear orange today.") == vec1);
+   std::vector<double> vec2 = generateVectorFromFrequency("Little Red Riding Hood decided to wear orange today.");
+
+   CHECK(vec1 == vec2);
+
+   std::vector<double> vec3(26);
+
+   for (int i = 0; i < vec3.size(); i++)
+   {
+      vec3.at(i) = 0;
+   }
+
+   std::vector<double> vec4 = generateVectorFromFrequency(".");
+
+   CHECK(vec3 == vec4);
 }
