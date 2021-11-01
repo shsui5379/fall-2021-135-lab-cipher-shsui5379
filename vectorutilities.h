@@ -1,3 +1,4 @@
 #pragma once
 
-double calculateDistance(double vector1[], double vector2[], int size);
+double calculateDistance(std::vector<double> vector1, std::vector<double> vector2);
+std::vector<double> generateVectorFromFrequency(std::string string);

@@ -16,4 +16,4 @@ decrypt.o: decrypt.cpp decrypt.h caesar.h
 vectorutilities.o: vectorutilities.cpp vectorutilities.h
 
 clean:
-	rm -f main.o tests.o caesar.o decrypt.o
+	rm -f main.o tests.o caesar.o decrypt.o vectorutilities.o
